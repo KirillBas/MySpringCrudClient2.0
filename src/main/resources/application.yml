@@ -1,0 +1,16 @@
+server:
+  port: 8080
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false
+    template-resolver-order: 1
+    enabled: true
+
+application:
+  server:
+    url: http://localhost:9090
+    username: admin
+    password: 123
