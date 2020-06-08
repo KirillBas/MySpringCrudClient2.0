@@ -23,12 +23,7 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserById(id));
     }
 
-    @RequestMapping(value = "/rest/user")
-    public String index() {
-        return "user";
-    }
-
-    @RequestMapping(value = "/rest/user", method = RequestMethod.GET)
+    @GetMapping(value = "/rest/user")
     public String getUser(Model model) {
         RestUser user = (RestUser) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
         long id = user.getId();

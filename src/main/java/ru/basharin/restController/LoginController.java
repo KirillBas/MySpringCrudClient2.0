@@ -14,17 +14,11 @@ public class LoginController {
     @Autowired
     private UserService userService;
 
-
     @PostMapping(value = "/login")
     public ModelAndView loginFine(@ModelAttribute("name") String name, @ModelAttribute("password") String pass) {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("redirect:/rest/admin/users");
         modelAndView.addObject("temp_user", userService.authUser(name, pass));
         return modelAndView;
-    }
-
-    @RequestMapping(value = "/login")
-    public String loginPage() {
-        return "login";
     }
 }

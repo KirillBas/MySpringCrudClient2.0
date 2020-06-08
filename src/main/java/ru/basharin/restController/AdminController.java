@@ -52,9 +52,4 @@ public class AdminController {
         userService.update(currentUser);
         return new ResponseEntity<>(HttpStatus.OK);
     }
-
-    @RequestMapping(value = "/rest/admin/users")
-    public String index() {
-        return "users";
-    }
 }
